@@ -241,12 +241,6 @@ onMounted(async () => {
 .incident-title { color: var(--lp-ink); font-weight: 700; font-size: 15px; }
 .incident-meta { color: var(--lp-faint); font-size: 13px; }
 
-.method-note {
-  margin: 40px 0 0; color: var(--lp-faint); font-size: 13.5px; line-height: 1.7;
-}
-.method-note a { color: var(--brand-2); text-decoration: none; }
-.method-note a:hover { text-decoration: underline; text-underline-offset: 3px; }
-
 @media (max-width: 640px) {
   .status-main { padding-top: 44px; }
   .page-title { font-size: 33px; }
