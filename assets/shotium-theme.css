@@ -137,6 +137,23 @@ main.container > article {
   font-size: 15.5px;
   letter-spacing: -0.01em;
 }
+main.container > article.up::before,
+main.container > article.down::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 13px;
+}
+main.container > article.up::before {
+  background: #18c39a;
+  box-shadow: 0 0 12px rgba(24, 195, 154, 0.8);
+}
+main.container > article.down::before {
+  background: #ff2047;
+  box-shadow: 0 0 12px rgba(255, 32, 71, 0.8);
+}
 main.container > article.up {
   background: linear-gradient(180deg, rgba(24, 195, 154, 0.1), rgba(24, 195, 154, 0.04)) !important;
   border: 1px solid rgba(39, 210, 174, 0.35) !important;
@@ -181,7 +198,8 @@ section.live-status .data {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
-section.live-status img.icon { border-radius: 4px; }
+/* favicon thumbnails read as noise on the dark cards */
+section.live-status img.icon { display: none; }
 
 /* ---- Time-range switcher: pill group ------------------------------------ */
 div.f h2 { margin: 0; }

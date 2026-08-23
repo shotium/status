@@ -38,3 +38,10 @@ status-website:
       href: https://shotium.com/docs
     - title: Feedback
       href: https://github.com/shotium/feedback
+
+# Emoji-free status strings; the theme CSS draws its own status dot
+i18n:
+  allSystemsOperational: All systems are operational
+  degradedPerformance: Degraded performance
+  partialOutage: Partial outage
+  completeOutage: Complete outage
