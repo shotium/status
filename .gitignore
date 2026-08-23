@@ -1,0 +1,6 @@
+node_modules/
+site/.nuxt/
+site/.output/
+site/.data/
+.DS_Store
+demo/

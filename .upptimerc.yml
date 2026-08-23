@@ -1,4 +1,8 @@
-# Shotium public status page — https://status.shotium.com
+# Shotium status monitoring — data core only.
+# The status site UI is our own Nuxt app in site/ (see Static Site CI);
+# Upptime's status-website/i18n options no longer apply.
+# Upptime template auto-updates are disabled (updates/update-template workflows removed);
+# uptime-monitor is pinned in .github/workflows/uptime.yml.
 owner: shotium
 repo: status
 user-agent: shotium
@@ -19,40 +23,7 @@ sites:
     expectedStatusCodes:
       - 401
 
-status-website:
-  cname: status.shotium.com
-  name: Shotium Status
-  themeUrl: https://status.shotium.com/shotium-theme.css
-  logoUrl: https://shotium.com/brand/shotium-mark-white.svg
-  favicon: https://shotium.com/favicon-96x96.png
-  faviconSvg: https://shotium.com/favicon.svg
-  customHeadHtml: '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">'
-  # Banner emoji is hardcoded in the template outside i18n; strip it at runtime, theme CSS draws its own status dot
-  js: >-
-    new MutationObserver(function () {
-      document.querySelectorAll("main article").forEach(function (a) {
-        a.childNodes.forEach(function (n) {
-          if (n.nodeType === 3 && /[\u2705\u26a0\ufe0f\ud83d\uded1]/.test(n.textContent)) {
-            n.textContent = n.textContent.replace(/[\u2705\u26a0\ufe0f\ud83d\uded1\u00a0]+\s*/g, "");
-          }
-        });
-      });
-    }).observe(document.documentElement, { childList: true, subtree: true });
-  introTitle: "**Shotium** service status"
-  introMessage: Live uptime and response times for [shotium.com](https://shotium.com), checked every ~5 minutes from GitHub Actions. All history is stored as public git commits in [this repository](https://github.com/shotium/status) — fully auditable.
-  navbar:
-    - title: Status
-      href: /
-    - title: shotium.com
-      href: https://shotium.com
-    - title: Docs
-      href: https://shotium.com/docs
-    - title: Feedback
-      href: https://github.com/shotium/feedback
-
-# Emoji-free status strings; the theme CSS draws its own status dot
-i18n:
-  allSystemsOperational: All systems are operational
-  degradedPerformance: Degraded performance
-  partialOutage: Partial outage
-  completeOutage: Complete outage
+# Keep repo metadata under our control
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
+skipHomepageUpdate: true
