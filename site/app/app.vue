@@ -78,6 +78,11 @@ onMounted(async () => {
     />
 
     <main class="status-main">
+      <div class="page-head">
+        <div class="page-kicker">Status</div>
+        <h1 class="page-title">Every check, <span class="dim">on the record.</span></h1>
+      </div>
+
       <section
         class="overall"
         :class="'is-' + overall"
@@ -103,7 +108,7 @@ onMounted(async () => {
             fill="currentColor"
           />
         </svg>
-        <h1 class="overall-text">{{ overallText[overall] }}</h1>
+        <h2 class="overall-text">{{ overallText[overall] }}</h2>
       </section>
 
       <section
@@ -173,9 +178,25 @@ onMounted(async () => {
 
 .status-main {
   width: min(820px, calc(100% - 48px));
-  margin: 0 auto; padding: 40px 0 96px;
+  margin: 0 auto; padding: 64px 0 96px;
   position: relative; z-index: 2; flex: 1;
 }
+
+/* Page head — main-site content-page hero pattern (kicker + heavy H1) */
+.page-head { margin-bottom: 30px; }
+.page-kicker {
+  color: #8d98ab; text-transform: uppercase; letter-spacing: 0.13em; font-size: 12px;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+}
+.page-kicker::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 0 10px rgba(24, 195, 154, 0.5);
+}
+.page-title {
+  margin: 0; font-size: 44px; font-weight: 830; letter-spacing: -0.05em;
+  line-height: 1.05; color: var(--lp-ink);
+}
+.page-title .dim { color: var(--lp-dim); font-weight: 760; }
 
 /* Overall banner */
 .overall {
@@ -230,4 +251,9 @@ onMounted(async () => {
 }
 .method-note a { color: var(--brand-2); text-decoration: none; }
 .method-note a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .status-main { padding-top: 44px; }
+  .page-title { font-size: 33px; }
+}
 </style>
