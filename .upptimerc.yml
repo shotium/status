@@ -1,31 +1,39 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Shotium public status page — https://status.shotium.com
+owner: shotium
+repo: status
+user-agent: shotium
+
+# Strict allowlist: uptime checks use no contextual secrets (GH_PAT is passed separately)
+secrets: []
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Website & Dashboard
+    url: https://shotium.com/api/health
+    slug: shotium-com
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+  - name: API
+    url: https://api.shotium.com/v1/screenshot
+    slug: api-shotium-com
+    # Unauthenticated request must reach the auth layer and return 401,
+    # proving edge + routing + auth middleware are alive
+    expectedStatusCodes:
+      - 401
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.shotium.com
+  name: Shotium Status
+  theme: dark
+  logoUrl: https://shotium.com/brand/shotium-app-icon-dark.svg
+  favicon: https://shotium.com/favicon-96x96.png
+  faviconSvg: https://shotium.com/favicon.svg
+  introTitle: "**Shotium** service status"
+  introMessage: Live uptime and response times for [shotium.com](https://shotium.com), checked every ~5 minutes from GitHub Actions. All history is stored as public git commits in [this repository](https://github.com/shotium/status) — fully auditable.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: shotium.com
+      href: https://shotium.com
+    - title: Docs
+      href: https://shotium.com/docs
+    - title: Feedback
+      href: https://github.com/shotium/feedback
