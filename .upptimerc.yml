@@ -27,6 +27,17 @@ status-website:
   favicon: https://shotium.com/favicon-96x96.png
   faviconSvg: https://shotium.com/favicon.svg
   customHeadHtml: '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">'
+  # Banner emoji is hardcoded in the template outside i18n; strip it at runtime, theme CSS draws its own status dot
+  js: >-
+    new MutationObserver(function () {
+      document.querySelectorAll("main article").forEach(function (a) {
+        a.childNodes.forEach(function (n) {
+          if (n.nodeType === 3 && /[\u2705\u26a0\ufe0f\ud83d\uded1]/.test(n.textContent)) {
+            n.textContent = n.textContent.replace(/[\u2705\u26a0\ufe0f\ud83d\uded1\u00a0]+\s*/g, "");
+          }
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
   introTitle: "**Shotium** service status"
   introMessage: Live uptime and response times for [shotium.com](https://shotium.com), checked every ~5 minutes from GitHub Actions. All history is stored as public git commits in [this repository](https://github.com/shotium/status) — fully auditable.
   navbar:
