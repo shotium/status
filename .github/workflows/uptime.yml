@@ -42,3 +42,15 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           # Configure the secret allowlist in .upptimerc.yml; do not edit this workflow directly.
           SECRETS_CONTEXT: '{}'
+      # Custom: rebuild the status site promptly when a status flips (baked
+      # data is otherwise refreshed daily). Needs GH_PAT — GITHUB_TOKEN
+      # dispatches don't trigger workflow runs.
+      - name: Rebuild site on status change
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if git log --since="12 minutes ago" --format=%s | grep -qE ' is (up|down|degraded) \('; then
+            echo "Status change detected, dispatching Static Site CI"
+            gh workflow run "Static Site CI" --repo "$GITHUB_REPOSITORY" || true
+          fi

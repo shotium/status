@@ -32,7 +32,11 @@ const label = computed(() => {
           class="svc-dot"
           :class="'is-' + site.status"
         />
-        <span class="svc-name">{{ site.name }}</span>
+        <a
+          class="svc-name"
+          :href="`https://github.com/shotium/status/commits/HEAD/history/${site.slug}.yml`"
+          title="Full check history (git commits)"
+        >{{ site.name }}</a>
         <span class="svc-desc">{{ site.description }}</span>
       </div>
       <div class="svc-meta">
@@ -80,7 +84,11 @@ const label = computed(() => {
 .svc-dot.is-up { background: var(--brand); box-shadow: 0 0 10px rgba(24, 195, 154, 0.65); }
 .svc-dot.is-degraded { background: var(--status-degraded); box-shadow: 0 0 10px rgba(255, 197, 61, 0.6); }
 .svc-dot.is-down { background: var(--status-down); box-shadow: 0 0 10px rgba(255, 32, 71, 0.6); }
-.svc-name { font-size: 16px; font-weight: 700; letter-spacing: -0.018em; color: var(--lp-ink); }
+.svc-name {
+  font-size: 16px; font-weight: 700; letter-spacing: -0.018em; color: var(--lp-ink);
+  text-decoration: none;
+}
+.svc-name:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--lp-faint); }
 .svc-desc { font-size: 13px; color: var(--lp-faint); }
 
 .svc-meta { display: flex; align-items: baseline; gap: 14px; flex: none; }

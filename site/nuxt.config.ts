@@ -15,6 +15,7 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'Shotium Status' },
         { property: 'og:description', content: 'Live uptime for shotium.com and api.shotium.com.' },
         { property: 'og:url', content: 'https://status.shotium.com/' },
+        { property: 'og:image', content: 'https://shotium.com/og.png' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },

@@ -45,6 +45,7 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT || github.token }}
           publish_dir: site/.output/public
-          force_orphan: false
+          # gh-pages history has no value; keep it a single commit
+          force_orphan: true
           user_name: "Upptime Bot"
           user_email: "73812536+upptime-bot@users.noreply.github.com"
