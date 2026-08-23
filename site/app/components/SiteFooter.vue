@@ -68,10 +68,6 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Contact</a>
           <a
-            href="https://github.com/shotium/status"
-            class="lp-foot-link"
-          >Status data</a>
-          <a
             href="mailto:support@shotium.com"
             class="lp-foot-link"
           >support@shotium.com</a>

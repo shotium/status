@@ -27,7 +27,3 @@ sites:
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
 skipHomepageUpdate: true
-
-# Never delete short-lived incident issues (default deletes issues resolved
-# within 15 min) — every incident stays on the record
-skipDeleteIssues: true

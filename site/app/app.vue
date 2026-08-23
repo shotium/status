@@ -150,11 +150,6 @@ onMounted(async () => {
           <span class="incident-meta">{{ fmtDate(inc.createdAt) }} · resolved in {{ fmtDuration(inc.createdAt, inc.closedAt) }} · postmortem on GitHub</span>
         </a>
       </section>
-
-      <p class="method-note">
-        Checked every 5 minutes from GitHub Actions. Every data point is a public
-        <a href="https://github.com/shotium/status">git commit</a> — fully auditable.
-      </p>
     </main>
 
     <SiteFooter :overall="overall" />
