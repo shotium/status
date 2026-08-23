@@ -37,7 +37,7 @@ status-website:
           }
         });
       });
-    }).observe(document.body, { childList: true, subtree: true });
+    }).observe(document.documentElement, { childList: true, subtree: true });
   introTitle: "**Shotium** service status"
   introMessage: Live uptime and response times for [shotium.com](https://shotium.com), checked every ~5 minutes from GitHub Actions. All history is stored as public git commits in [this repository](https://github.com/shotium/status) — fully auditable.
   navbar:
