@@ -157,7 +157,7 @@ onMounted(async () => {
       </p>
     </main>
 
-    <SiteFooter />
+    <SiteFooter :overall="overall" />
   </div>
 </template>
 
