@@ -40,6 +40,10 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Pricing</a>
           <a
+            href="https://shotium.com/changelog"
+            class="lp-foot-link"
+          >Changelog</a>
+          <a
             href="https://shotium.com/account"
             class="lp-foot-link"
           >Account</a>
