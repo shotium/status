@@ -44,6 +44,10 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Changelog</a>
           <a
+            href="https://shotium.com/blog"
+            class="lp-foot-link"
+          >Blog</a>
+          <a
             href="https://shotium.com/account"
             class="lp-foot-link"
           >Account</a>
