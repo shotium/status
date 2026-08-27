@@ -32,6 +32,10 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Docs</a>
           <a
+            href="https://shotium.com/screenshot-api"
+            class="lp-foot-link"
+          >Guides</a>
+          <a
             href="https://shotium.com/og-templates"
             class="lp-foot-link"
           >Templates</a>
@@ -40,17 +44,45 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Pricing</a>
           <a
-            href="https://shotium.com/changelog"
+            href="https://shotium.com/account"
             class="lp-foot-link"
-          >Changelog</a>
+          >Account</a>
+        </nav>
+        <nav
+          class="lp-foot-col"
+          aria-label="Resources"
+        >
+          <span class="lp-foot-head">Resources</span>
           <a
             href="https://shotium.com/blog"
             class="lp-foot-link"
           >Blog</a>
           <a
-            href="https://shotium.com/account"
+            href="https://shotium.com/changelog"
             class="lp-foot-link"
-          >Account</a>
+          >Changelog</a>
+          <a
+            href="https://shotium.com/openapi.json"
+            class="lp-foot-link"
+          >OpenAPI spec</a>
+        </nav>
+        <nav
+          class="lp-foot-col"
+          aria-label="Company"
+        >
+          <span class="lp-foot-head">Company</span>
+          <a
+            href="https://shotium.com/about"
+            class="lp-foot-link"
+          >About</a>
+          <a
+            href="https://shotium.com/contact"
+            class="lp-foot-link"
+          >Contact</a>
+          <a
+            href="mailto:support@shotium.com"
+            class="lp-foot-link"
+          >support@shotium.com</a>
         </nav>
         <nav
           class="lp-foot-col"
@@ -65,24 +97,6 @@ const badge = computed(() => ({
             href="https://shotium.com/privacy"
             class="lp-foot-link"
           >Privacy Policy</a>
-        </nav>
-        <nav
-          class="lp-foot-col"
-          aria-label="Support"
-        >
-          <span class="lp-foot-head">Support</span>
-          <a
-            href="https://shotium.com/about"
-            class="lp-foot-link"
-          >About</a>
-          <a
-            href="https://shotium.com/contact"
-            class="lp-foot-link"
-          >Contact</a>
-          <a
-            href="mailto:support@shotium.com"
-            class="lp-foot-link"
-          >support@shotium.com</a>
         </nav>
       </div>
       <div class="lp-foot-bottom">
@@ -123,7 +137,7 @@ const badge = computed(() => ({
 
 <style scoped>
 .lp-footer { padding: 76px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.06); position: relative; z-index: 2; margin-top: auto; }
-.lp-foot-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 0.85fr); gap: 26px; }
+.lp-foot-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 0.78fr); gap: 24px; }
 .lp-foot-lock { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 .lp-foot-mark { width: 24px; height: 24px; color: #eef1f6; }
 .lp-foot-word { font-size: 22px; font-weight: 850; letter-spacing: -0.03em; line-height: 24px; color: #f5f7fb; }
@@ -148,7 +162,10 @@ const badge = computed(() => ({
 .lp-foot-status.is-degraded svg { color: var(--status-degraded); }
 .lp-foot-status.is-partial svg, .lp-foot-status.is-major svg { color: var(--status-down); }
 @media (max-width: 1200px) {
-  .lp-foot-grid { grid-template-columns: repeat(3, 1fr); }
+  .lp-foot-grid { grid-template-columns: repeat(4, 1fr); }
   .lp-foot-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 720px) {
+  .lp-foot-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
 }
 </style>
