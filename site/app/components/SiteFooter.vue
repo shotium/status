@@ -54,6 +54,10 @@ const badge = computed(() => ({
         >
           <span class="lp-foot-head">Resources</span>
           <a
+            href="https://shotium.com/tools/og-image-generator"
+            class="lp-foot-link"
+          >Free OG generator</a>
+          <a
             href="https://shotium.com/blog"
             class="lp-foot-link"
           >Blog</a>
