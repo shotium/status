@@ -4,6 +4,7 @@ const open = ref(false)
 
 const links = [
   { label: 'Docs', href: 'https://shotium.com/docs' },
+  { label: 'Guides', href: 'https://shotium.com/screenshot-api' },
   { label: 'Templates', href: 'https://shotium.com/og-templates' },
   { label: 'Pricing', href: 'https://shotium.com/pricing' },
 ]
