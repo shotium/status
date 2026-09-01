@@ -58,6 +58,10 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Free OG generator</a>
           <a
+            href="https://shotium.com/tools/open-graph-checker"
+            class="lp-foot-link"
+          >Open Graph checker</a>
+          <a
             href="https://shotium.com/blog"
             class="lp-foot-link"
           >Blog</a>
