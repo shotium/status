@@ -4,7 +4,7 @@ Public status page for [Shotium](https://shotium.com) — live at **[status.shot
 
 ## How it works
 
-- **Probes** — GitHub Actions checks every ~5 minutes (Uptime CI):
+- **Probes** — GitHub Actions scheduled checks (Uptime CI; the cron is `*/5`, but GitHub throttles scheduled workflows on low-activity repositories, so in practice a probe lands roughly every 3 hours — minute-level alerting lives in a separate private probe, this page is the public record):
   - Website & Dashboard: `https://shotium.com/api/health`, expects `200` with `"status":"ok"` in the body
   - API: unauthenticated `https://api.shotium.com/v1/screenshot`, expects `401` — proving edge, routing and the auth layer are alive
 - **Data** — every check result is committed to this repository: `history/*.yml` (current snapshot per service) and `history/summary.json` (aggregates, including daily downtime minutes). Uptime CI commits on status changes; Response Time CI forces a daily snapshot so aggregates never go stale. Fully auditable via git history.
