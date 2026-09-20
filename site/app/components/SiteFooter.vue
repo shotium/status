@@ -36,6 +36,10 @@ const badge = computed(() => ({
             class="lp-foot-link"
           >Guides</a>
           <a
+            href="https://shotium.com/og-image-api"
+            class="lp-foot-link"
+          >OG image API</a>
+          <a
             href="https://shotium.com/integrations/n8n"
             class="lp-foot-link"
           >n8n integration</a>
